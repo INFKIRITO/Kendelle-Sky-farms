@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+    color: black;
+}
+
+form {
+    max-width: 25rem;
+    margin-left: 13rem;
+    padding: var(--space-4);
+    background-color: #666;
+    border-radius: var(--border-radius-medium);
+    text-align: center;
+    color: white;
+}
+
+form hr {
+    border-color: greenyellow;
+    margin:var(--space-4);
+}
+
+lable {
+    color: var(--color-gary-100);
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+input, textarea {
+    font: inherit;
+    padding: var(--space-2);
+    border-radius: var(--border-radius-small);
+    border: none;
+    width: 90%;
+}
