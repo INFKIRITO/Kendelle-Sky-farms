@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+a .btn {
+    padding: .8rem 2.5rem;
+}
+
+.price {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.availability {
+    color: #4CAF50;
+}
+
+@media only screen and (max-width: 1200px) {
+    li {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    li {
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    li {
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+}
