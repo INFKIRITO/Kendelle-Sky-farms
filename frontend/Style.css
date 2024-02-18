@@ -1,0 +1,276 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        html{
+            scroll-behavior:smooth;
+        }
+
+        header {
+            background-color:rgb(252, 251, 249);
+            color:#555;
+            text-align: center;
+            padding: 1em;
+        }
+        section{
+            width: 100%;
+            height: 100vh;
+        }
+        section nav{
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            align-items:center;
+            right: 0;
+            left: 0;
+            background: #f5f5f5;
+            background-color:rgb(243, 251, 250);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: black;
+            z-index: 1000;
+        }
+        section nav .logo img{
+            width: 120px;
+            cursor: pointer;
+            margin: -5px;
+        }
+        section nav ul{
+            list-style: none;
+            margin-left:400px;
+        }
+        section nav ul li{
+            display: inline-block;
+            margin: 0 15px;
+        }
+        section nav ul li a{
+           color: #000; 
+           font-weight: 500;
+           font-size: 17px;
+           transition: 0.1s;
+        }
+        section nav ul li a::after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #68d66f;
+            display: block;
+            transition: 0.2s;
+        }
+        section nav ul li a:hover::after{
+         width: 100%;
+        }
+        section nav ul li a:hover{
+            color: #68d66f;
+        }
+        section .search-form{
+            position: absolute;
+            top: 110%; right: -110%;
+            width: 30rem;
+            height: 3rem;
+            background: #fff;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--box-shadow);
+        }
+        section .search-form.active{
+           right: 2rem;
+           transition: .4s linear; 
+        }
+        section .search-form input{
+            height: 100%;
+            width: 100%;
+            background: none;
+            text-transform: none;
+            font-size: 1.1rem;
+            color: var(--black);
+            padding: 0 1.5rem;
+            border: none;
+        }
+        section .search-form lable{
+            font-size: 1.3rem;
+            padding-right: 1.5rem;
+            color:var(--black);
+            cursor: pointer;
+        }
+        section .search-form lable:hover{
+            color: var(--orange);
+            transition: 0.2s;
+        }
+        section nav .icon i{
+            font-size: 18px;
+            color: #000;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        section nav .icon i:hover{
+          color: #68d66f;
+        }
+        section .main{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position:relative;
+            top: 100px;
+        }
+        section .main .men_text h1{
+            position:relative;
+            font-size: 40px;
+            bottom: 136px;
+            left: 109px;
+        }
+        .men_text h1{
+            color: #68d66f;
+            font-size: 40px;
+            bottom: -69px;
+        }
+        .men_text h1 span{
+            color:#484948;
+            font-size: 40px;
+        }   
+        .men_text h2{
+            background: #68d66f;
+            padding:3px;
+            width: 269px;
+            text-align: center;
+            font-size: 17px;
+            position: relative;
+            bottom: 99px;
+            color: #fff;
+            left: 105px;
+            cursor: pointer;
+            font-weight: normal;
+            border-radius: 30px 130px 30px;
+            transition: 0.3s;
+            }
+            .men_text h2:hover{
+                background: #000;
+            }
+            section .main .men_text h2 span{
+                color: #f5f5f5;
+                font-family: mv boli;
+                font-size: 25px;
+            }
+            section .main .main_img img{
+               position: realtive;
+               width: 650px;
+               margin-left: 200px;
+               border-radius: 30px 130px 20px;
+            }
+            section p{
+                overflow: hidden;
+                width: 550px;
+                text-align: center;
+                position: relative;
+                left:123px;
+                bottom:121px;
+                line-height: 22px;
+            }
+            .main_btn{
+                background:#68d66f;
+                position: relative;
+                left: 586px;
+                bottom: 90px;
+                width: 150px;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 30px 130px 30px;
+                padding: 8px;
+                transition: 0.3s;
+            }
+            .main_btn:hover{
+                background: black;
+            }
+            .main button a{
+                color: #fff;
+                margin-right: 5px;
+            }
+            .main_btn i{
+                color: #fff;
+                transition: 0.3s;
+            }
+            .main_btn:hover i{
+                transform: translateX(7px);
+            }
+
+            <!-------about --------->
+            .about{
+                width: 100%;
+                height: 100vh;
+                padding: 100px 0;
+                background-image: url('images/ga5.jpg');
+                background-repeat: no-repeat;
+                text-align: center;
+                justify-content: center;  
+            }
+            .about_main{
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+            .about_text h1 span{
+                color: #68d66f;
+                margin-right: 15px;
+            }
+            .about_text h1{
+                margin-top: -50px;
+                font-size: 45px;
+                position:relative;
+                bottom: 70px;
+            }
+            .about_text h3{
+                font-size: 30px;
+                margin-top: -80px;
+            }
+            .about_text p{
+                width: 1000px;
+                margin-top: -10px;
+                text-align: center;
+                line-height: 19px;
+            }
+            .about_btn{
+                background: #68d66f;
+                padding: 10px 30px;
+                color: #fff;
+                margin-left: 92px;
+                position: relative;
+                bottom: -100px;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 30px 130px 30px;
+                transition: 0.3;
+            }
+            .about_btn:hover{
+                background: #000;
+            }
+
+
+     
+         
+
+       
+
+
+        footer .three{
+            color: #fff;
+            text-align: left;
+            font-size: 12px;
+            text-align: center;
+        }
+        footer {
+            background-color: #b6cd4f;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em;
+            position:relative;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Reset some default styles */
+
+
