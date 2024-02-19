@@ -1,13 +1,14 @@
-<%- include('../includes/head', { pageTitle: 'Signup' }) %>
+<%- include('../../shared/includes/head', { pageTitle: 'Login' }) %>
 <link rel="stylesheet" href="/styles/form.css" >
 <link rel="stylesheet" href="/styles/auth.css" >
 
 </head>
 <body>
-    <%- include('../includes/header') %>
+    <%- include('../../shared/includes/header') %>
 <main>
     <h1>Login in</h1>
-    <form action="/signup" method="POST">
+    <form action="/login" method="POST">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
         <p>
             <lable for="email">E-mail</lable>
             <input type="email" id="email" name="email" required> 
@@ -21,4 +22,4 @@
     </form>
 </main>
 
-<%- include('../includes/footer') %>
+<%- include('../../shared/includes/footer') %>
