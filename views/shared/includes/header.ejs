@@ -2,7 +2,12 @@
     <div><a href="/">Kendalle Sky Farms</a></div>
     <div><img src="photos/logo2.jpg" alt="Your Logo"></div>
     <nav>
-        
-
+        <ul>
+            <% if (locals.isAuth) { %>
+            <li>
+                <button>Logout</button>
+            </li>
+            <% } %>
+        </ul>
     </nav>
 </header>
