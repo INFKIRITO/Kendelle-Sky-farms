@@ -25,11 +25,7 @@ async function signup(req, res, next){
         req.body.postal, 
         req.body.city
       ) || !validation.emailIsConfirmed(req.body.email, req.body['confirm-email'])
-    ){
-        res.redirect('/signup');
-        return;
-    }
-    
+    )
 
     try {
         await user.signup();
@@ -52,7 +48,7 @@ async function login(req, res, next) {
     const user = new User(req.body.email, req.body.password);
     let existingUser;
     try {
-         existingUser = await user.getUserWithSameEmail();
+       existingUser = await user.getUserWithSameEmail();
     } catch(error){
         next(error);
         return;
@@ -78,7 +74,6 @@ async function login(req, res, next) {
 function logout(req, res) { 
     authUtil.destroyUserAuthSession(req);
     res.redirect("./login");
-
 }
 
 module.exports = {

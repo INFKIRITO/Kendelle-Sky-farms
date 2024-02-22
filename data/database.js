@@ -7,6 +7,7 @@ let database;
 async function connectToDatabase() {
     const client = await MongoClient.connect('mongodb://localhost:27017/online-shop', { useNewUrlParser: true, useUnifiedTopology: true });
     database = client.db(); // No need to specify the database name here
+    return client;
 }
 
 
