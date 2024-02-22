@@ -8,7 +8,12 @@ function createUserSession(req, user, action) {
         }
     });
 }
+function destoryUserAuthSession(req){
+    req.session.uid = null;
+}
+
 
 module.exports = {
-    createUserSession: createUserSession
+    createUserSession: createUserSession,
+    destoryUserAuthSession:destoryUserAuthSession
 };

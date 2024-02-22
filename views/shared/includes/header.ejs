@@ -1,11 +1,15 @@
 <header>
     <div><a href="/">Kendalle Sky Farms</a></div>
-    <div><img src="photos/logo2.jpg" alt="Your Logo"></div>
+    
     <nav>
         <ul>
             <% if (locals.isAuth) { %>
             <li>
-                <button>Logout</button>
+                <form action="/logout" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">                                        
+                    <button>Logout</button>   
+                </form>
+                
             </li>
             <% } %>
         </ul>

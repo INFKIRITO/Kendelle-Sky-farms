@@ -1,9 +1,12 @@
 const User = require('../models/user.model');
 const authUtil = require('../util/authentication');
+const validation = require('../util/validation');
+
+
 function getSignup(req, res){
     res.render('customer/auth/signup');
 }
-async function signup(req, res){
+async function signup(req, res, next){
   const user = new User(
     req.body.email, 
     req.body.password, 
@@ -13,7 +16,29 @@ async function signup(req, res){
     req.body.city
     );
 
-    await user.signup();
+    if (
+      !validation.userDetailsAreValid(
+        req.body.email, 
+        req.body.password, 
+        req.body.fullname, 
+        req.body.street, 
+        req.body.postal, 
+        req.body.city
+      ) || !validation.emailIsConfirmed(req.body.email, req.body['confirm-email'])
+    ){
+        res.redirect('/signup');
+        return;
+    }
+    
+
+    try {
+        await user.signup();
+        console.log('signup successful')
+    }  catch(error) {
+        console.error('Error during signup:', error);
+        next(error);
+        return;
+    }
 
     res.redirect('/login');
 }
@@ -23,9 +48,16 @@ function getLogin(req, res){
 
 }
 
-async function login(req, res) {
+async function login(req, res, next) {
     const user = new User(req.body.email, req.body.password);
-    const existingUser = await user.getUserWithSameEmail();
+    let existingUser;
+    try {
+         existingUser = await user.getUserWithSameEmail();
+    } catch(error){
+        next(error);
+        return;
+    }
+    
 
     if(!existingUser) { 
         res.redirect('/login');
@@ -40,14 +72,19 @@ async function login(req, res) {
 
     authUtil.createUserSession(req, existingUser, function() {
         res.redirect('/');
+    })
+}
 
-    });
+function logout(req, res) { 
+    authUtil.destroyUserAuthSession(req);
+    res.redirect("./login");
+
 }
 
 module.exports = {
     getSignup: getSignup,
     getLogin: getLogin,
     signup: signup,
-    login: login
-
+    login: login,
+    logout:logout
 };
