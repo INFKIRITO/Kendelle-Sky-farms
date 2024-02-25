@@ -19,6 +19,19 @@ class User {
         return db.getDb().collection('users').findOne({email: this.email });
     }
 
+    async existsAlready() {
+        try {
+            const existingUser = await this.getUserWithSameEmail();
+            if (existingUser) {
+                return true;
+            }
+            return false;
+        } catch (error) {
+            console.error('Error checking if user exists:', error);
+            throw error; // Rethrow the error to be caught in the catch block outside this function.
+        }
+    }
+
     async signup() {
         const hashedPassword = await bcrypt.hash(this.password, 12);
 

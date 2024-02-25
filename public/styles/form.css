@@ -4,6 +4,7 @@ h1 {
 }
 
 form {
+    position: relative;
     max-width: 25rem;
     margin-left: 13rem;
     padding: var(--space-4);
@@ -31,3 +32,5 @@ input, textarea {
     border: none;
     width: 90%;
 }
+
+
