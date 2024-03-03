@@ -4,6 +4,7 @@ const db = require('./data/database');
 const authRoutes = require('./routes/auth.routes');
 const checkAuthStatusMiddleware = require('./middleware/check-auth');
 const baseRoutes = require('./routes/base.routes');
+const adminRoutes = require('./routes/admin.routes');
 const productsRoutes = require('./routes/products.routes');
 const app = express();
 const csrf = require('csurf');
@@ -32,6 +33,7 @@ app.use(checkAuthStatusMiddleware);
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
+app.use('/admin', adminRoutes);
 
 db.connectToDatabase()
   .then(function () {

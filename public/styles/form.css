@@ -5,8 +5,8 @@ h1 {
 
 form {
     position: relative;
-    max-width: 25rem;
-    margin-left: 13rem;
+    max-width: rem;
+    margin-left: rem;
     padding: var(--space-4);
     background-color: #666;
     border-radius: var(--border-radius-medium);
