@@ -2,7 +2,7 @@ const multer = require('multer');
 const uuid = require('uuid').v4;
 
 const upload = multer({
-    Storage: multer.diskStorage({
+    storage: multer.diskStorage({
         destination: 'product-data/images',
         filename: function(req, file, cb) {
             cb(null, uuid() + '-' + file.originalname);
@@ -10,6 +10,6 @@ const upload = multer({
     })
 });
 
-const configuredMulterMIddleware = upload.single('image');
+const configuredMulterMiddleware = upload.single('image');
 
-module.exports = configuredMulterMIddleware;
+module.exports = configuredMulterMiddleware;
