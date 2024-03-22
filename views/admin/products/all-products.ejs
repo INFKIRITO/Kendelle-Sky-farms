@@ -10,10 +10,14 @@
         </p>
     </section>
     <section>
-        <p>a list of products</p>
+                <ul>
+                    <% products.forEach(function(product) { %>
+                        <li>
+                            <%- include('../includes/product-item.ejs', { product: product }) %>
+                        </li>
+                    <% }); %>
+                </ul>
     </section>
-    
-             
 </main>
 
 <%- include('../../shared/includes/footer') %>
