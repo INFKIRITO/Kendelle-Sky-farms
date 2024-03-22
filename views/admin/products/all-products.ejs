@@ -1,4 +1,5 @@
 <%- include('../../shared/includes/head', { pageTitle: 'All-Products' }) %>
+<link rel="stylesheet" href="/styles/products.css">
 </head>
 <body>
     <%- include('../../shared/includes/header') %>
@@ -10,7 +11,7 @@
         </p>
     </section>
     <section>
-                <ul>
+                <ul id="products-grid">
                     <% products.forEach(function(product) { %>
                         <li>
                             <%- include('../includes/product-item.ejs', { product: product }) %>
