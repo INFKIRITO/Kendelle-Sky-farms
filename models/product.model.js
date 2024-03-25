@@ -27,7 +27,7 @@ class Product {
 
         }
         
-        const product = await db.getDb().collections('products').findOne({_id: prodId});
+        const product = await db.getDb().collection('products').findOne({_id: prodId});
 
         if(!product) {
             const error = new Error('could not find product with provided id.');
@@ -35,7 +35,7 @@ class Product {
             throw error;
         }
 
-        return productId;
+        return product;
     }
     
     static async findAll() {
