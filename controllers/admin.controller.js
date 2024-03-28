@@ -47,7 +47,7 @@ async function getUpdateProduct(req, res, next) {
 }
 
 async function updateProducts (req, res) {
-    const product = new product({
+    const product = new Product({
         ...req.body,
         _id: req.params.id
 
