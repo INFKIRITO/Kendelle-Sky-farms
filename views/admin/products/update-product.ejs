@@ -7,7 +7,7 @@
     <%- include('../../shared/includes/header') %>
 <main>
     <h1>Update Product</h1>
-    <%- include('../includes/product-form', { submitPath: '/admin/products/' + product.id,  product: product, imageRequired: false }) %>
+    <%- include('includes/product-form.ejs', { submitPath: '/admin/products/' + product.id,  product: product, imageRequired: false }) %>
     
              
 </main>

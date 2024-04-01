@@ -30,13 +30,14 @@ app.use(csrf());
 
 app.use(addCsrfTokenMiddleware);
 app.use(checkAuthStatusMiddleware);
-app.use(errorHandleMiddleware);
+
 
 app.use(protectRoutesMiddleware);
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
 app.use('/admin', adminRoutes);
+app.use(errorHandleMiddleware);
 
 db.connectToDatabase()
   .then(function () {

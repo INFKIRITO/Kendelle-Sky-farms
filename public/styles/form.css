@@ -1,53 +1,83 @@
 h1 {
     text-align: center;
-    color: black;
+    color: var(--text-color-dark); /* Adjusted color for better contrast */
+    margin-bottom: var(--space-6); /* Added margin for spacing */
+    font-size: 2.5rem; /* Increased font size for heading */
 }
 
 form {
     position: relative;
-    max-width: rem;
-    margin-left: rem;
-    padding: var(--space-4);
-    background-color: #666;
+    max-width: 40rem; /* Increased max-width for better form layout */
+    margin: 0 auto; /* Centered form horizontally */
+    padding: var(--space-5);
+    background-color: var(--color-gray-100); /* Lightened background color */
     border-radius: var(--border-radius-medium);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+    color: var(--text-color-dark); /* Adjusted text color */
     text-align: center;
-    color: white;
 }
 
 form hr {
-    border-color: greenyellow;
-    margin:var(--space-4);
+    border-color: var(--color-primary-500); /* Adjusted border color */
+    margin: var(--space-5) 0; /* Adjusted margin for spacing */
 }
 
-lable {
-    color: var(--color-gary-100);
+label {
+    color: var(--text-color-dark); /* Adjusted label color */
     display: block;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3); /* Adjusted margin for spacing */
+    font-size: 1.5rem; /* Increased font size for labels */
 }
 
 input, textarea {
     font: inherit;
-    padding: var(--space-2);
-    border-radius: var(--border-radius-small);
-    border: none;
-    width: 90%;
+    padding: var(--space-3); /* Adjusted padding */
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--color-gray-300); /* Added border for input fields */
+    width: 100%; /* Adjusted width for responsiveness */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    background-color: white; /* Set background color to white */
+    color: var(--text-color-dark); /* Adjusted text color */
+    font-size: 1.5rem; /* Increased font size for inputs */
+    transition: border-color 0.3s ease; /* Smooth transition for input focus */
+}
+
+input:focus, textarea:focus {
+    border-color: var(--color-primary-500); /* Highlight border on focus */
+    outline: none;
 }
 
 #image-upload-control {
     display: flex;
     align-items: center;
+    margin-bottom: var(--space-4); /* Added margin for spacing */
 }
 
-#image-upload-control input {
-    max-width: 15rem;
-
+#image-upload-control input[type="file"] {
+    max-width: 20rem;
+    display: none; /* Hide the actual file input */
 }
+
+#image-upload-control label {
+    background-color: var(--color-primary-500); /* Added background color for upload button */
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--border-radius-medium);
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1.5rem; /* Increased font size for buttons */
+}
+
+#image-upload-control label:hover {
+    background-color: var(--color-primary-500-dark); /* Darker background on hover */
+}
+
 #image-upload-control img {
-    display: none;
-    width: 4rem;
-    height: 4rem;
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
     object-fit: cover;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-medium);
+    margin-left: var(--space-3); /* Added margin for spacing */
+    border: 1px solid var(--color-gray-300); /* Added border for image */
 }
-
-
