@@ -4,9 +4,11 @@ const db = require('./data/database');
 const authRoutes = require('./routes/auth.routes');
 const checkAuthStatusMiddleware = require('./middleware/check-auth');
 const protectRoutesMiddleware = require('./middleware/protect-routes');
+const cartMiddleware = require('./middleware/cart');
 const baseRoutes = require('./routes/base.routes');
 const adminRoutes = require('./routes/admin.routes');
 const productsRoutes = require('./routes/products.routes');
+const cartRoutes = require('./routes/cart.routes');
 const app = express();
 const csrf = require('csurf');
 const expressSession = require('express-session');
@@ -20,7 +22,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
 app.use('/products/assets', express.static('product-data'));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 
 // Correct the variable name to createSessionConfig
 const sessionConfig = createSessionConfig();
@@ -28,14 +32,18 @@ const sessionConfig = createSessionConfig();
 app.use(expressSession(sessionConfig));
 app.use(csrf());
 
+app.use(cartMiddleware);
+
 app.use(addCsrfTokenMiddleware);
 app.use(checkAuthStatusMiddleware);
 
 
-app.use(protectRoutesMiddleware);
+
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
+app.use('/cart', cartRoutes);
+app.use(protectRoutesMiddleware);
 app.use('/admin', adminRoutes);
 app.use(errorHandleMiddleware);
 
