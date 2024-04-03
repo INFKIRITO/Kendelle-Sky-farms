@@ -83,6 +83,11 @@
     z-index: 1; /* Ensure text is above the icon */
 }
 
+#cart-total #cart-total-fallback {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
 /* Media Query */
 @media (min-width: 48rem) {
     .cart-item {
